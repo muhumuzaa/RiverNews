@@ -1,0 +1,10 @@
+<div routerLink="/article/{{article?.id}}" class="cursor-pointer">
+    <img [src]="article?.urlToImage" alt="{{article?.title}}" class="w-full object-cover h-20 sm:h-40 ">
+    <div class="">
+        <h3 class="font-bold text-lg">{{article?.title}}</h3>
+        <p class="text-sm py-4">{{article?.author}}</p>
+        <p class="text-xs pb-4">{{article?.publishedAt}}</p>
+        <p>{{article?.description}}</p>
+    </div>
+    
+</div>

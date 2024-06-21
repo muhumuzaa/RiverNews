@@ -1,0 +1,26 @@
+<div class="max-w-7xl mx-auto items-center justify-center h-screen">
+    <div class="grid md:grid-cols-2 gap-6">
+        <div *ngFor="let article of myArticles">
+            <div routerLink="/article/{{article?.id}}" class="cursor-pointer shadow">
+                <img [src]="article?.urlToImage" alt="{{article?.title}}" class="w-full object-cover h-20 sm:h-40 ">
+                <div class="">
+                    <h3 class="font-bold text-lg">{{article?.title}}</h3>
+                    <p class="text-sm py-4">{{article?.author}}</p>
+                    <p class="text-xs pb-4">{{article?.publishedAt}}</p>
+                    <p>{{article?.description}}</p>
+                </div>
+                <div class="flex justify-between">
+                    <button routerLink="/edit-article/{{article.id}}" class="bg-teal-500 rounded py-2 px-4 capitalize text-white">Edit</button>
+                    <button (click)="onDeleteArticle(article.id)" class="bg-red-500 rounded py-2 px-4 capitalize text-white">Delete</button>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <a 
+    routerLink="/create-article"
+    class="border-2 border-teal-500 rounded py-2 px-4 capitalize text-teal-500 text-bold"
+    >
+    Create New Listing
+    </a>
+</div>

@@ -1,0 +1,22 @@
+<div class="flex flex-col max-w-7xl mx-auto items-center justify-center min-h-screen">
+    <h2 class="text-2xl md:py-6 py-2">Edit Article</h2>
+    
+    <div class="shadow sm:p-10 p-4">
+
+        <app-article-data-form
+            buttonText = "Update Article"
+            (onSubmit)="handleSubmit($event)"
+            
+            [curr_id]="blog?.id ?? ''"
+            [curr_author]="blog?.author ?? ''"
+            [curr_title]="blog?.title ?? ''"
+            [curr_publishedAt]="blog?.publishedAt ?? ''"
+            [curr_urlToImage]="blog?.urlToImage ?? ''"
+            [curr_description]="blog?.description ?? ''"
+        >
+
+        </app-article-data-form>
+        <h2 *ngIf="errorMessage" class="text-2xl md:py-6 py-2">{{errorMessage}}</h2>
+    </div>
+</div>
+

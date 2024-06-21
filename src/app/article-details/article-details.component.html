@@ -1,0 +1,24 @@
+<div class="max-w-7xl mx-auto py-4">
+    <div class="relative" *ngIf="!isLoading">
+        <img [src]="blog?.urlToImage" alt={{blog?.title}}>
+        <div class="mt-6">
+            <h1 class="text-3xl">By {{blog?.title}}</h1>
+            <span class="flex gap-4 justify-between w-full">
+                {{blog?.author}} 
+                <span class="text-gray-400">{{blog?.publishedAt}}</span>
+                <span class="text-gray-400">{{blog?.views}} views</span>
+        </span>
+        </div>
+        <span>{{blog?.description}}</span>
+        <div routerLink="/home" class=" flex shadow py-2 px-4 border-2 border-teal-500 bg-white rounded-lg text-bold text-xs cursor-pointer absolute top-4 left-0">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-3">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
+              </svg>
+              
+            Back to Blogs
+        </div>
+    </div>
+    <div *ngIf="isLoading">
+        <p>Loading...</p>
+    </div>
+</div>

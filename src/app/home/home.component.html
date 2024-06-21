@@ -1,0 +1,10 @@
+<div class="max-w-7xl mx-auto items-center justify-center h-screen">
+    <div class="grid md:grid-cols-3 gap-6">
+    <app-article-item 
+    class="bg-gray-50 rounded overflow-hidden shadow" 
+    *ngFor="let article of blogs"
+    [article]="article"
+    >
+    </app-article-item>
+</div>
+</div>
